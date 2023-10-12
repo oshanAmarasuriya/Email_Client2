@@ -1,6 +1,8 @@
 Official: Kamal,Kamal@gmail.com,ceo
 Official: Vimal,vimal@gmail.com,ceo
-Personal: Supun,sunil@gmail.com,2000/10/10
+Official: Supun,sunil@gmail.com,clerk
 Personal: sunil,,sunil@gmail.com,2000/10/12
 Office_friend: kamal,kamal@gmail.com,clerk,2000/12/12
 Office_friend: kamal,kamal@gmail.com,clerk,2000/10/12
+Personal: jaye,,jaye@gmail.com,2002/10/12
+Office_friend: nilkamal,nilkamal@gmail.com,dev,2000/10/12

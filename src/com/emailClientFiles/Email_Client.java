@@ -50,7 +50,7 @@ public class Email_Client {
 			
 
 			
-			EmailHandler eh=EmailHandler.getInstance("<not specified>", emailDetails.split(", ")[1], emailDetails.split(", ")[2],emailDetails.split(", ")[0], dateFormat.format(date));
+			EmailHandler eh=new EmailHandler("<not specified>", emailDetails.split(", ")[1], emailDetails.split(", ")[2],emailDetails.split(", ")[0], dateFormat.format(date));
 			eh.sendMail();
 			Serializer.serialize(eh);
 			 
@@ -86,6 +86,7 @@ public class Email_Client {
 
 			//Deserialize and fetch sent mail objects
 			ArrayList<EmailHandler> filtered_sentmail = Serializer.getSentEmails(inputSentDate);
+			//System.out.println(filtered_sentmail.get(0));
 			
 			for (int i = 0; i < filtered_sentmail.size(); i++) {
 				System.out.println("Sent to: " + filtered_sentmail.get(i).getName() + ", email: "

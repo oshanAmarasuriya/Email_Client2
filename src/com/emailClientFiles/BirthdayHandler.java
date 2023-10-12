@@ -78,7 +78,7 @@ public class BirthdayHandler {
 			wish =((PersonalRecipient)current).wish();
 		}
 		String subject="Dear "+current.getName()+",";
-		EmailHandler eh=EmailHandler.getInstance(current.getName(),subject,wish,current.getEmail(),dateFormat.format(date));
+		EmailHandler eh=new EmailHandler(current.getName(),subject,wish,current.getEmail(),dateFormat.format(date));
 		eh.sendMail();//send
 		Serializer.serialize(eh); // serialize the sent mail
 

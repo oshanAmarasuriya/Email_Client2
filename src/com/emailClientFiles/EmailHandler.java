@@ -10,31 +10,18 @@ import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
 
-/* ===============================
-		Using singleton design pattern to make email handling resources unique throughout the system
- */
 
 public class EmailHandler  implements Serializable { // made the class serializable by implementing this.
 	
 	private String name,subject,content,address,sent_date;
-	private static EmailHandler instance;
 	
-	private EmailHandler(String name, String subject,String content,String address,String date) {
+	public EmailHandler(String name, String subject,String content,String address,String date) {
 		this.name=name;
 		this.subject=subject;
 		this.content=content;
 		this.address=address;
 		this.sent_date=date;
 	}
-
-	public static EmailHandler getInstance(String name, String subject,String content,String address,String date){
-		if(instance==null){
-			instance=new EmailHandler(name,subject,content,address,date);
-		}
-		return instance;
-	}
-
-
 	public  void sendMail() throws Exception {
 		//email sending operations
 		System.out.println("Please wait, sending emails in progress!");
@@ -45,9 +32,9 @@ public class EmailHandler  implements Serializable { // made the class serializa
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "587");
 
-		// Give email account credentials here
-		String myemail="<add the email address>";
-		String password="<Add the password>";
+		//Give email credentials
+		String myemail="<email address>";
+		String password="<password>";
 
 
 
@@ -98,6 +85,6 @@ public class EmailHandler  implements Serializable { // made the class serializa
 		return sent_date;
 	}
 	
-	//Is this out of git?? locked??
+	//Is this out of git??
 	
 }
