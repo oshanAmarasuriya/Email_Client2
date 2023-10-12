@@ -30,11 +30,16 @@ Implemented only have to send out messages. Not implemented the logic to receive
 
 Command-line options are available for:
 
-Adding a new recipient
-Sending an email
-Printing out all the names of recipients who have their birthday set to current date
-Printing out details (subject and recipient) of all the emails sent on a date specified by user input
-Printing out the number of recipient objects in the application
-You may use the code given in this link to implement the basic functionality of the mail client (But it is perfectly ok to use a different code as well). In the given code, note that it imports the javax.mail package. This package is included in the javax.mail.jar, which can be downloaded from here.
+1.Adding a new recipient.
+
+2.Sending an email.
+
+3.Printing out all the names of recipients who have their birthday set to current date.
+
+4.Printing out details (subject and recipient) of all the emails sent on a date specified by user input.
+
+5.Printing out the number of recipient objects in the application.
+
+Note that it imports the javax.mail package. This package is included in the javax.mail.jar.
 
 Save the recipient data into clientList.txt.
