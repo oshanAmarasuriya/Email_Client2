@@ -16,7 +16,7 @@ public class BirthdayHandler {
 	private static final int current_month = localDate.getMonthValue();
 	private static final int today = localDate.getDayOfMonth();
 	private static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-	private static FileHandler filehandler=new FileHandler();
+	private static FileHandler filehandler=FileHandler.getInstance();
 	
 	public static void wishForBirthday() throws Exception {
 		//sending birthday wishes and serialization.
@@ -78,7 +78,7 @@ public class BirthdayHandler {
 			wish =((PersonalRecipient)current).wish();
 		}
 		String subject="Dear "+current.getName()+",";
-		EmailHandler eh=new EmailHandler(current.getName(),subject,wish,current.getEmail(),dateFormat.format(date));
+		EmailHandler eh=EmailHandler.getInstance(current.getName(),subject,wish,current.getEmail(),dateFormat.format(date));
 		eh.sendMail();//send
 		Serializer.serialize(eh); // serialize the sent mail
 

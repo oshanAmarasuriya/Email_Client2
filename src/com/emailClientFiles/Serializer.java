@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+
+
 public class Serializer {
 	/* In the class serializing and deserializing of emailhandler objects are done */
 

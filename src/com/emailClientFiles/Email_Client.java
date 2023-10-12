@@ -14,7 +14,7 @@ public class Email_Client {
 
 
 	public static void main(String[] args) throws Exception {
-		FileHandler filehandler = new FileHandler();
+		FileHandler filehandler = FileHandler.getInstance();
 		BirthdayHandler.wishForBirthday();
 		Scanner scanner = new Scanner(System.in);
         
@@ -50,7 +50,7 @@ public class Email_Client {
 			
 
 			
-			EmailHandler eh=new EmailHandler("<not specified>", emailDetails.split(", ")[1], emailDetails.split(", ")[2],emailDetails.split(", ")[0], dateFormat.format(date));
+			EmailHandler eh=EmailHandler.getInstance("<not specified>", emailDetails.split(", ")[1], emailDetails.split(", ")[2],emailDetails.split(", ")[0], dateFormat.format(date));
 			eh.sendMail();
 			Serializer.serialize(eh);
 			 
@@ -100,7 +100,6 @@ public class Email_Client {
 			// code to print the number of recipient objects in the application
 
 			System.out.println("Number of all recipients: ");
-			
 			System.out.println(FileHandler.getRecipient_count());
 
 			break;

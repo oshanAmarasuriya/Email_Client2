@@ -9,12 +9,22 @@ import java.util.ArrayList;
 
 /* ===============================================
 		Factory Method (Polymoprism)
+		Used Singleton to make a single point of access to this class
 */
 
 public class FileHandler {
 	/* txt file related operations */
 	private static int recipient_count;
-	
+	private static FileHandler instance;
+
+	private FileHandler(){}
+
+	public static FileHandler getInstance() {
+		if (instance == null) {
+			instance = new FileHandler();
+		}
+		return instance;
+	}
 
 	public static int getRecipient_count() {
 		return recipient_count;
@@ -42,6 +52,7 @@ public class FileHandler {
 	
 	public ArrayList<Recipient> readFromFile() {
 		//Reading from the file
+		recipient_count=0;
 		ArrayList<Recipient> list=new ArrayList<Recipient>();
 		try {
 			FileReader fr= new FileReader("clientList.txt");
