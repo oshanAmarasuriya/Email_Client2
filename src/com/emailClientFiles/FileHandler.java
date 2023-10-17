@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /* ===============================================
-		Factory Method (Polymoprism)
-		Used Singleton to make a single point of access to this class
+		Factory  (Polymoprism)
+		Used Singleton to make a single point of access to RecipientFactory class
 */
 
 public class FileHandler {
@@ -59,7 +59,7 @@ public class FileHandler {
 			BufferedReader bfr=new BufferedReader(fr);
 			String line=null;
 			while((line=bfr.readLine()) != null) {
-				list.add(split_factory(line)); // use a factory to generate various objects.
+				list.add(split(line)); // use a factory to generate various objects.
 				recipient_count+=1;
 			}
 			bfr.close();
@@ -70,20 +70,11 @@ public class FileHandler {
 		return list;
 	}
 
-	private Recipient split_factory(String line) {
-		//factory method implementation
-		//According to fileinfo, create and return different user objects.
-		String[] arr=line.split(",");
-		String[] temparr=arr[0].split(" ");
-		String type= temparr[0];
-		String name= temparr[1];
-		if(type.equals("Official:")) {
-			return new OfficialRecipient(name,arr[1],arr[2]);
-		}else if(type.equals("Office_friend:")) {
-			return new OfficialFriendRecipient(name,arr[1],arr[2],arr[3]);
-		}else {
-			return new PersonalRecipient(name,arr[1],arr[2],arr[3]);
-		}
+	private Recipient split(String line) {
+		//create
+		RecipientFactory reci_factory=RecipientFactory.getInstance(); //Singleton pattern for single point of access
+		return reci_factory.getRecipient(line);
+
 	}
 	
 

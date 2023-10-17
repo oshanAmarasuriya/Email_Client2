@@ -49,10 +49,14 @@ public class Email_Client {
 			String emailDetails = scanner1.next();
 			
 
-			
-			EmailHandler eh=new EmailHandler("<not specified>", emailDetails.split(", ")[1], emailDetails.split(", ")[2],emailDetails.split(", ")[0], dateFormat.format(date));
-			eh.sendMail();
-			Serializer.serialize(eh);
+			try {
+				EmailHandler eh = new EmailHandler("<not specified>", emailDetails.split(",")[1], emailDetails.split(",")[2], emailDetails.split(",")[0], dateFormat.format(date));
+				eh.sendMail();
+				Serializer.serialize(eh);
+			}catch (Exception e){
+				System.out.println("You entered in a wrong format");
+			}
+
 			 
 			
 			//sc2.close();

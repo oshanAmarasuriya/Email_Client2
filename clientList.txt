@@ -6,3 +6,5 @@ Office_friend: kamal,kamal@gmail.com,clerk,2000/12/12
 Office_friend: kamal,kamal@gmail.com,clerk,2000/10/12
 Personal: jaye,,jaye@gmail.com,2002/10/12
 Office_friend: nilkamal,nilkamal@gmail.com,dev,2000/10/12
+Official: saman,nimal@gmail.com,cTO
+Office_friend: kamal,kamal@gmail.com,clerk,2000/10/17
